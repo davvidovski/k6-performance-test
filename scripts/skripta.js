@@ -4,7 +4,7 @@ import { check, sleep } from 'k6';
 // Options
 export let options = {
     stages: [
-        { duration: '10s', target: 1000 },  // Ramp up to 2 VUs over 10 seconds
+        { duration: '10s', target: 10 },  // Ramp up to 2 VUs over 10 seconds
         { duration: '20s', target: 5 },  // Ramp up to 5 VUs over 20 seconds
         { duration: '30s', target: 10 }, // Ramp up to 10 VUs over 30 seconds
         { duration: '10s', target: 10 }, // Stay at 10 VUs for 10 seconds
