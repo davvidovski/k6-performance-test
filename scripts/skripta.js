@@ -1,5 +1,4 @@
 import http from 'k6/http';
-import http from '../scripts/skripta.js';
 
 import { check, sleep } from 'k6';
 
