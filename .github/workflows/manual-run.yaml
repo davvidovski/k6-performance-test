@@ -1,6 +1,18 @@
-name: k6 Test
+name: k6 Manual Test
 
-on: [push, pull_request]
+on:
+  workflow_dispatch:
+    inputs:
+      script-name:
+        description: 'Name of the k6 script to run'
+        required: true
+        type: choice
+        options:
+          - skripta.js
+          - skriptaExtended.js
+          - skriptaThresholds.js
+          - skriptaThresholdsAndChecks.js
+        default: 'skripta.js'
 
 jobs:
   k6_test:
@@ -26,10 +38,10 @@ jobs:
 
       - name: Run k6 tests
         run: |
-          k6 run --vus 10 --duration 30s '../scripts/skripta.js'
+          k6 run ./scripts/${{ github.event.inputs['script-name'] }}
 
       - name: Upload k6 results
         uses: actions/upload-artifact@v3
         with:
           name: k6-results
-          path: result
+          path: result.json
