@@ -26,7 +26,7 @@ jobs:
 
       - name: Run k6 tests
         run: |
-          k6 run --vus 10 --duration 30s script.js
+          k6 run --vus 10 --duration 30s skripta.js
 
       - name: Upload k6 results
         uses: actions/upload-artifact@v2
