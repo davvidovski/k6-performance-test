@@ -2,7 +2,7 @@ import http from 'k6/http';
 
 import { check, sleep } from 'k6';
 
-// Options
+// Options test 
 export let options = {
     stages: [
         { duration: '10s', target: 10 },  // Ramp up to 2 VUs over 10 seconds
