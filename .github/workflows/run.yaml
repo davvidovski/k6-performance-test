@@ -8,12 +8,12 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '20'
 
       - name: Install k6
         run: |
@@ -26,10 +26,10 @@ jobs:
 
       - name: Run k6 tests
         run: |
-          k6 run --vus 10 --duration 30s skripta.js
+          k6 run --vus 10 --duration 30s script.js
 
       - name: Upload k6 results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: k6-results
-          path: result.json
+          path: result
