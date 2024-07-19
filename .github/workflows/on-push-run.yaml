@@ -27,9 +27,3 @@ jobs:
       - name: Run k6 tests
         run: |
           k6 run ./scripts/skripta.js
-
-      - name: Upload k6 results
-        uses: actions/upload-artifact@v3
-        with:
-          name: k6-results
-          path: result.json
