@@ -8,11 +8,11 @@ on:
         required: true
         type: choice
         options:
-          - skripta.js
-          - skriptaExtended.js
-          - skriptaThresholds.js
+          - scriptWithStages.js
+          - scriptExtended.js
+          - scriptThresholds.js
           - skriptaThresholdsAndChecks.js
-        default: 'skripta.js'
+        default: 'scriptWithStages.js'
 
 jobs:
   k6_test:
